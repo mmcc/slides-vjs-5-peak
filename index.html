@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Video.js 5.0 Sneak Peek</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- For Fonts -->
+		<link rel="stylesheet" href="lib/css/font-awesome.css">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/mmcc.css" id="theme">
+		<link rel="stylesheet" href="node_modules/video.js/dist/video-js.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<img src="/img/logos/videojs.png" class="no-border"></img>
+					<h3>Video.js <span class="text blue">5.0</span> Sneak Peek</h3>
+					<p>
+							<small><a href="http://twitter.com/matt_mcclure"><i class="fa fa-twitter"></i>  @matt_mcclure</a></small>
+					</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>No More <span class="text pink">IE 8</span>!</h2>
+						<img src="/img/celebrate.gif"></img>
+					</section>
+
+					<section>
+						<h2>Just kidding.</h2>
+						<img src="/img/foreveralone.jpg" height="500px" width="auto" class="no-border"></img>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Fresh <span class="text blue">new</span> look</h2>
+						<video id="vid1" class="video-js" controls preload="auto" width="640" height="267"
+						poster="http://video-js.zencoder.com/oceans-clip.png"
+						data-setup='{ "playbackRates": [1, 2, 3] }'>
+							<source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4'>
+							<source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm'>
+							<source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg'>
+							<track kind="captions" src="../build/demo-files/demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
+							<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+						</video>
+					</section>
+
+					<section>
+						<h2>Base theme by <span class="text orange">default</span></h2>
+						<ul>
+							<li>The base theme will be prepended to the document head. Just the VJS JS include now gets you a functioning player!</li>
+							<li>Not interested? Simply set <code class="text orange">window.VIDEOJS_NO_BASE_THEME = true</code></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Tiny <span class="text indigo">customization</span> stylesheets</h2>
+						<pre><code data-trim>.vjs-skin-hotdog-stand { color: #FF0000; }
+.vjs-skin-hotdog-stand .vjs-control-bar { background: #FFFF00; }
+.vjs-skin-hotdog-stand .vjs-play-progress { background: #FF0000; }</code></pre>
+
+						<img src="/img/hotdog-stand.png" class="no-border"></img>
+					</section>
+
+					<section>
+						<h2>Moar <span class="text pink">accessibility</span></h2>
+						<p>Tab order isn't an issue anymore! Woo!</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Internal <span class="text green">house cleaning</span></h2>
+						<p>I know none of you have experienced technical debt...</p>
+					</section>
+
+					<section>
+						<h2>Load <span class="text pink">all</span> the things</h2>
+						<img src="/img/too-many-places.png" class="no-border"></img>
+						<p><small>Only <em>really</em> an issue in development</small></p>
+					</section>
+
+					<section>
+						<img src="/img/browserify.png" class="no-border"></img>
+						<pre><code data-trim>var Component = require('../component.js');
+var LiveDisplay = Component.extend({ /* */ });
+
+var Button = require('../button.js');
+var FullscreenToggle = Button.extend({ /* */ });</code></pre>
+
+					<p>\o/</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Improved <span class="text orange">captions</span> support</h2>
+						<p>Captions are harder than you think. Native and / or Flash...</p>
+						<p>(╯°□°）╯︵ ┻━┻ </p>
+					</section>
+
+					<section>
+						<h2>Back when <span class="text green">WebVTT</span> was but a child</h2>
+						<p>~50 lines of code to parse a cue</p>
+					</section>
+
+					<section>
+						<h2>Enter: <span class="text indigo">FCC</span></h2>
+						<p>Accessibility is always important, but thanks to requirements, everyone's taking notice.</p>
+					</section>
+
+					<section>
+						<h2><span class="text blue">VTT.js</span> to the rescue</h2>
+						<p>We're working on bundling VTT.js for robust WebVTT support.</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Improved <span class="text pink">processes</span></h2>
+					<p>Mmmm...nothing says "sexy" like "streamlined deployment processes"</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Extensions, <span class="text blue">extensions</span>, extensions</h2>
+						<p>Actual guidelines for writing and publishing skins / plugins</p>
+					</section>
+
+					<section>
+						<h2>Everything on <span class="text orange">NPM</span></h2>
+						<p>Because package managers installed with a package manager are dumb.</p>
+						<p><small>Yeah. I said it.</small></p>
+					</section>
+				</section>
+
+				<section>
+					<h2><i class="fa fa-github text blue"></i> videojs/<span class="text blue">video.js</span></h2>
+					<p>Thoughts, concerns, criticisms? <a href="https://github.com/videojs/video.js/issues">Open an issue!</a></p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="node_modules/video.js/dist/video.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
