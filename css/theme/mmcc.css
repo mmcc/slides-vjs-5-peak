@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
 /**
  * A simple theme for reveal.js presentations, similar
  * to the default theme. The accent color is darkblue.
@@ -5,13 +6,13 @@
  * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
  * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
 @font-face {
   font-family: 'League Gothic';
   src: url("../../lib/font/league_gothic/league_gothic-webfont.eot");
   src: url("../../lib/font/league_gothic/league_gothic-webfont.eot?#iefix") format("embedded-opentype"), url("../../lib/font/league_gothic/league_gothic-webfont.woff") format("woff"), url("../../lib/font/league_gothic/league_gothic-webfont.ttf") format("truetype"), url("../../lib/font/league_gothic/league_gothic-webfont.svg#LeagueGothicRegular") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 .reveal small i {
   vertical-align: middle; }
 
@@ -41,25 +42,29 @@
   box-shadow: none; }
 
 .reveal .video-js {
-  font-size: 10px;
-  margin: 0 auto; }
+  font-size: 10px !important;
+  margin: 0 auto;
+  line-height: 1em; }
+
+.struck {
+  text-decoration: line-through; }
 
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #fff;
-  background-color: #fff; }
+  background: white;
+  background-color: white; }
 
 .reveal {
   font-family: "Lato", sans-serif;
   font-size: 36px;
   font-weight: normal;
   letter-spacing: -0.02em;
-  color: #000; }
+  color: black; }
 
 ::selection {
-  color: #fff;
+  color: white;
   background: rgba(0, 0, 0, 0.99);
   text-shadow: none; }
 
@@ -73,7 +78,7 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #000;
+  color: black;
   font-family: "League Gothic", Impact, sans-serif;
   line-height: 0.9em;
   letter-spacing: 0.02em;
@@ -87,7 +92,7 @@ body {
  * LINKS
  *********************************************/
 .reveal a:not(.image) {
-  color: #66A8CC;
+  color: #66a8cc;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
@@ -110,7 +115,7 @@ body {
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #000;
+  border: 4px solid black;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   -webkit-transition: all .2s linear;
   -moz-transition: all .2s linear;
@@ -120,7 +125,7 @@ body {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #66A8CC;
+  border-color: #66a8cc;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
@@ -128,19 +133,19 @@ body {
  *********************************************/
 .reveal .controls div.navigate-left,
 .reveal .controls div.navigate-left.enabled {
-  border-right-color: #66A8CC; }
+  border-right-color: #66a8cc; }
 
 .reveal .controls div.navigate-right,
 .reveal .controls div.navigate-right.enabled {
-  border-left-color: #66A8CC; }
+  border-left-color: #66a8cc; }
 
 .reveal .controls div.navigate-up,
 .reveal .controls div.navigate-up.enabled {
-  border-bottom-color: #66A8CC; }
+  border-bottom-color: #66a8cc; }
 
 .reveal .controls div.navigate-down,
 .reveal .controls div.navigate-down.enabled {
-  border-top-color: #66A8CC; }
+  border-top-color: #66a8cc; }
 
 .reveal .controls div.navigate-left.enabled:hover {
   border-right-color: #b3d4e6; }
@@ -161,7 +166,7 @@ body {
   background: rgba(0, 0, 0, 0.2); }
 
 .reveal .progress span {
-  background: #66A8CC;
+  background: #66a8cc;
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -ms-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
@@ -172,6 +177,4 @@ body {
  * SLIDE NUMBER
  *********************************************/
 .reveal .slide-number {
-  color: #66A8CC; }
-
-/*# sourceMappingURL=mmcc.css.map */
+  color: #66a8cc; }

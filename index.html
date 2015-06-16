@@ -48,10 +48,11 @@
 			<div class="slides">
 				<section>
 					<img src="/img/logos/videojs.png" class="no-border"></img>
-					<h3>Video.js <span class="text blue">5.0</span> Sneak Peek</h3>
-					<p>
-							<small><a href="http://twitter.com/matt_mcclure"><i class="fa fa-twitter"></i>  @matt_mcclure</a></small>
-					</p>
+					<h3>Video.js <span class="text blue">5.0</span> <span class="struck">Sneak Peek</span> Release Candidate</h3>
+					<ul class="fa-ul unstyled">
+						<li><i class="fa-li fa fa-twitter text blue"></i><a href="http://twitter.com/matt_mcclure">matt_mcclure</a></small>
+						<li><i class="fa-li fa fa-github text blue"></i><a href="http://github.com/mmcc">mmcc</a></small>
+					</ul>
 				</section>
 
 				<section>
@@ -63,6 +64,12 @@
 					<section>
 						<h2>Just kidding.</h2>
 						<img src="/img/foreveralone.jpg" height="500px" width="auto" class="no-border"></img>
+					</section>
+
+					<section>
+						<h2>But baby <span class="text orange">steps</span></h2>
+						<p>A shim is required, so a conscious decision is required.</p>
+						<p class="fragment"><small><i class="fa fa-bomb text orange"></i> Die IE8. Die.</small></p>
 					</section>
 				</section>
 
@@ -81,7 +88,7 @@
 					</section>
 
 					<section>
-						<h2>Base theme by <span class="text orange">default</span></h2>
+						<h2>Base theme <span class="struck">by <span class="text orange">default</span></span> [5.1]</h2>
 						<ul>
 							<li>The base theme will be prepended to the document head. Just the VJS JS include now gets you a functioning player!</li>
 							<li>Not interested? Simply set <code class="text orange">window.VIDEOJS_NO_BASE_THEME = true</code></li>
@@ -101,6 +108,23 @@
 						<h2>Moar <span class="text pink">accessibility</span></h2>
 						<p>Tab order isn't an issue anymore! Woo!</p>
 					</section>
+
+					<section>
+						<h2>And more<span class="text blue">...</span></h2>
+						<ul class="fa-ul unstyled">
+							<li><i class="fa-li fa fa-space-shuttle text blue"></i> Spacer Element</li>
+							<li><i class="fa-li fa fa-th-large text blue"></i> <code>border-box</code> by default</li>
+							<li><i class="fa-li fa fa-volume-up text blue"></i> Volume Menu Button by default</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2><span class="text indigo">Example</span> Skins</h2>
+						<ul class="fa-ul unstyled">
+							<li><i class="fa-li fa fa-twitch text indigo"></i> <a href="http://mmcc.github.io/videojs-skin-twitchy">Twitchy</a></li>
+							<li><i class="fa-li fa fa-eyedropper text indigo"></i> <a href="http://mmcc.github.io/videojs-skin-colors">Colors</a></li>
+						</ul>
+					</section>
 				</section>
 
 				<section>
@@ -111,19 +135,34 @@
 
 					<section>
 						<h2>Load <span class="text pink">all</span> the things</h2>
-						<img src="/img/too-many-places.png" class="no-border"></img>
+						<img src="./img/too-many-places.png" class="no-border"></img>
 						<p><small>Only <em>really</em> an issue in development</small></p>
 					</section>
 
 					<section>
-						<img src="/img/browserify.png" class="no-border"></img>
+						<img src="./img/browserify.png" class="no-border"></img>
 						<pre><code data-trim>var Component = require('../component.js');
 var LiveDisplay = Component.extend({ /* */ });
 
 var Button = require('../button.js');
 var FullscreenToggle = Button.extend({ /* */ });</code></pre>
 
-					<p>\o/</p>
+					<p>But <span class="text orange">wait</span>! There's more!</p>
+					</section>
+
+					<section>
+						<img class="no-border" src="./img/babel.svg" width="350px">
+						<h2><span class="struck">ES6</span> <span class="text blue">ES2015</span></span></h2>
+						<pre><code data-trim>import Component from '../component.js';
+class LiveDisplay extends Component { /* */ };
+
+let foo = 'bar';
+const thing = 'will not change';
+let { foo, bar, bat } = someObject;
+let templateStr = `calling all ${peopleType}`;
+let square = a => a * a;
+</code></pre>
+						<p><small>Via the <a href="https://github.com/babel/babelify">Babelify</a> Browserify transform</small></p>
 					</section>
 				</section>
 
@@ -146,13 +185,29 @@ var FullscreenToggle = Button.extend({ /* */ });</code></pre>
 
 					<section>
 						<h2><span class="text blue">VTT.js</span> to the rescue</h2>
-						<p>We're working on bundling VTT.js for robust WebVTT support.</p>
+						<p>We're <span class="struck">working on</span> bundling VTT.js for robust WebVTT support.</p>
 					</section>
 				</section>
 
 				<section>
-					<h2>Improved <span class="text pink">processes</span></h2>
-					<p>Mmmm...nothing says "sexy" like "streamlined deployment processes"</p>
+					<section>
+						<h2>Improved <span class="text pink">processes</span></h2>
+						<p>Mmmm...nothing says "sexy" like "streamlined deployment processes"</p>
+					</section>
+
+					<section>
+						<h2>No more property <span class="text orange">mangling</span></h2>
+						<p>Removed aggressive object property mangling (Closure Compiler)</p>
+						<p><small>You mean <code class="text orange">videojs.b</code> and <code class="text orange">videojs.A</code> don't exist anymore?!</small></p>
+					</section>
+
+					<section>
+						<h2>Standard <span class="text indigo">Naming</span> Conventions</h2>
+						<ul class="fa-ul unstyled">
+							<li><i class="fa-li fa fa-file-code-o text indigo"></i> <code>video.js</code> ==> <code>video.min.js</code></li>
+							<li><i class="fa-li fa fa-file-code-o text indigo"></i> <code>video.dev.js</code> ==> <code>video.js</code></li>
+						</ul>
+					</section>
 				</section>
 
 				<section>
@@ -164,7 +219,7 @@ var FullscreenToggle = Button.extend({ /* */ });</code></pre>
 					<section>
 						<h2>Everything on <span class="text orange">NPM</span></h2>
 						<p>Because package managers installed with a package manager are dumb.</p>
-						<p><small>Yeah. I said it.</small></p>
+						<p class="fragment"><small>Yeah. I said it.</small></p>
 					</section>
 				</section>
 
